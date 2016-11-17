@@ -14,5 +14,7 @@ namespace Net.Application.Shop.Core
     {
         [Key]
         public int ID { get; set; }
+
+        public string Name { get; set; }
     }
 }
