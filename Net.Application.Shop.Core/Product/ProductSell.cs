@@ -14,5 +14,17 @@ namespace Net.Application.Shop.Core
     {
         [Key]
         public int ID { get; set; }
+
+        [Required]
+        public int ProductID { get; set; }
+
+        [Required, MaxLength(1024)]
+        public string SellTitle { get; set; }
+
+        [Required]
+        public int Price { get; set; }
+
+        [Required]
+        public int Stock { get; set; }
     }
 }

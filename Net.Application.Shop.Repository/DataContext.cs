@@ -17,14 +17,26 @@ namespace Net.Application.Shop
         }
 
         public DbSet<User> User { get; set; }
+
+        public DbSet<UserAddress> UserAddress { get; set; }
+
         public DbSet<Payment> Payment { get; set; }
+
         public DbSet<Order> Order { get; set; }
+
+        public DbSet<OrderItem> OrderItem { get; set; }
+
         public DbSet<ProductSell> ProductSell { get; set; }
+
         public DbSet<Product> Product { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Order>()
+                .HasMany<OrderItem>(o => o.Items)
+                .WithRequired(item => item.Order);
         }
     }
 }
