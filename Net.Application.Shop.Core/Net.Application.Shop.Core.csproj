@@ -72,11 +72,13 @@
   <ItemGroup>
     <Compile Include="CoreModule.cs" />
     <Compile Include="Order\Order.cs" />
+    <Compile Include="Order\OrderItem.cs" />
     <Compile Include="Payment\Payment.cs" />
     <Compile Include="Product\Product.cs" />
     <Compile Include="Product\ProductSell.cs" />
     <Compile Include="User\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\UserAddress.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

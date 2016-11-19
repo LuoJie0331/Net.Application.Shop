@@ -160,3 +160,6 @@ $RECYCLE.BIN/
 
 # VisualStudioCode
 .vscode
+
+# VisualStudio
+.vs
