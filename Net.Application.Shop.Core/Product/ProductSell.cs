@@ -12,6 +12,11 @@ namespace Net.Application.Shop.Core
     [Table("ProductSell")]
     public class ProductSell : ModelBase
     {
+        public ProductSell()
+        {
+            this.Category = new List<Core.Category>();
+        }
+
         [Key]
         public int ID { get; set; }
 
@@ -26,5 +31,7 @@ namespace Net.Application.Shop.Core
 
         [Required]
         public int Stock { get; set; }
+
+        public List<Category> Category { get; set; }
     }
 }

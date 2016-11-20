@@ -17,6 +17,7 @@ namespace Net.Application.Shop.Core
             this.Items = new List<OrderItem>();
         }
 
+        #region 字段
         [Key]
         public int ID { get; set; }
 
@@ -30,6 +31,20 @@ namespace Net.Application.Shop.Core
         public virtual User User { get; set; }
 
         public virtual List<OrderItem> Items { get; set; }
+        #endregion
+
+        #region 方法
+
+        public int CountTotalPrice()
+        {
+            int sum = 0;
+
+            sum = this.Items.Sum(c => c.TotalCost());
+
+            return sum;
+        }
+
+        #endregion
     }
 
     public enum OrderStatus

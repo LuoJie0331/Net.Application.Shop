@@ -74,6 +74,7 @@
     <Compile Include="Order\Order.cs" />
     <Compile Include="Order\OrderItem.cs" />
     <Compile Include="Payment\Payment.cs" />
+    <Compile Include="Product\Category.cs" />
     <Compile Include="Product\Product.cs" />
     <Compile Include="Product\ProductSell.cs" />
     <Compile Include="User\User.cs" />
