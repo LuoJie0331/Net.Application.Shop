@@ -22,7 +22,9 @@ namespace Net.Application.Shop.Core
         public string Brand { get; set; }
 
         public int Price { get; set; }
-        
+
+        //public List<string> Photos { get; set; }
+
         public string Introduce { get; set; }
     }
 }

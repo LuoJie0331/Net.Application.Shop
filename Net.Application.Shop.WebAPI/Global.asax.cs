@@ -18,6 +18,8 @@ namespace Net.Application.Shop.WebAPI
             CoreModule.Initialize();
             Net.Framework.Entity.IocInstaller.Init();
             //Net.General.Dependency.MVC.WindsorControllerFactory.Register(Assembly.GetExecutingAssembly());
+
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
         }
     }
 }

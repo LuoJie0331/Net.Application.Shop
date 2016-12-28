@@ -33,5 +33,11 @@ namespace Net.Application.Shop.Core
         public int Stock { get; set; }
 
         public List<Category> Category { get; set; }
+
+        [MaxLength(100)]
+        public string ShortIntro { get; set; }
+
+        [ForeignKey("ProductID")]
+        public virtual Product Product { get; set; }
     }
 }

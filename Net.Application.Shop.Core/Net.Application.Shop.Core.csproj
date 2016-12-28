@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Order\Cart.cs" />
     <Compile Include="CoreModule.cs" />
     <Compile Include="Order\Order.cs" />
     <Compile Include="Order\OrderItem.cs" />

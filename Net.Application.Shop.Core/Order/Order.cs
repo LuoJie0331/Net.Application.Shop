@@ -25,7 +25,23 @@ namespace Net.Application.Shop.Core
 
         public int TotalPrice { get; set; }
 
+        public int TotalCost { get; set; }
+
         public OrderStatus OrderStatus { get; set; }
+
+        public int PostFee { get; set; }
+
+        [MaxLength(20)]
+        public string PostReceiver { get; set; }
+
+        [MaxLength(20)]
+        public string PostTel { get; set; }
+
+        [MaxLength(200)]
+        public string PostAddress { get; set; }
+
+        [MaxLength(20)]
+        public string PostCompany { get; set; }
 
         [ForeignKey("UserID")]
         public virtual User User { get; set; }
@@ -35,13 +51,23 @@ namespace Net.Application.Shop.Core
 
         #region 方法
 
-        public int CountTotalPrice()
+        public int CountTotalCost()
         {
-            int sum = 0;
+            this.TotalPrice = this.Items.Sum(c => c.Cost());
+            this.TotalCost = this.TotalPrice + this.PostFee;
 
-            sum = this.Items.Sum(c => c.TotalCost());
+            return this.TotalCost;
+        }
 
-            return sum;
+        public void Submit(OrderItem[] items)
+        {
+            foreach (var item in items)
+            {
+                item.OrderItemStatus = OrderItemStatus.InOrder;
+                this.Items.Add(item);
+            }
+
+            //savechange();
         }
 
         #endregion

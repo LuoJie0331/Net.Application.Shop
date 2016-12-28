@@ -17,6 +17,8 @@ namespace Net.Application.Shop.Core
         public int ID { get; set; }
 
         [Required]
+        public int UserID { get; set; }
+
         public int OrderID { get; set; }
 
         [Required]
@@ -30,18 +32,32 @@ namespace Net.Application.Shop.Core
 
         [Required]
         public int Count { get; set; }
+        
+        public bool CheckForOrder { get; set; }
+
+        public OrderItemStatus OrderItemStatus { get; set; }
 
         [ForeignKey("OrderID")]
         public virtual Order Order { get; set; }
+
+
+        [ForeignKey("SellID")]
+        public virtual ProductSell ProductSell { get; set; }
         #endregion
 
         #region 方法
 
-        public int TotalCost()
+        public int Cost()
         {
             return this.Price * this.Count;
         }
 
         #endregion
+    }
+
+    public enum OrderItemStatus
+    {
+        InCart = 0,
+        InOrder = 1
     }
 }
